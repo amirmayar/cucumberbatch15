@@ -1,6 +1,11 @@
 package pages;
 
 import Utils.CommonMethods;
+import Utils.ConfigReader;
+import Utils.GlobalVariables;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;

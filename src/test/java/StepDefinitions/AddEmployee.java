@@ -2,9 +2,12 @@ package StepDefinitions;
 
 import Utils.CommonMethods;
 import Utils.ConfigReader;
+import Utils.GlobalVariables;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import pages.AddEmployeePage;
 
 public class AddEmployee extends CommonMethods {
 
@@ -44,8 +47,32 @@ public class AddEmployee extends CommonMethods {
 
     @When("user clicks on save button")
     public void user_clicks_on_save_button() {
-
         //WebElement saveBtn = driver.findElement(By.id("btnSave"));
-        // doClick(addEmployeePage.saveBtn);
+        doClick(addEmployeePage.saveBtn);
     }
+
+    @When("user enters {string} and {string} and  {string}")
+    public void user_enters_and_and(String fname, String mname, String lname) {
+        sendText(addEmployeePage.firstNameTextBox, fname);
+        sendText(addEmployeePage.middleNameTextBox, mname);
+        sendText(addEmployeePage.lastNameTextBox, lname);
+    }
+    @When("user captures the employee id")
+    public void user_captures_the_employee_id() {
+       // GlobalVariables.emp_id = AddEmployeePage.empIdLocator.getAttribute("value");
+        System.out.println("The employee id is: " + GlobalVariables.emp_id);
+    }
+
+    @When("query the information in backend")
+    public void query_the_information_in_backend() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+
+    @Then("verify the results from frontend and backend")
+    public void verify_the_results_from_frontend_and_backend() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+
 }
